@@ -1,7 +1,5 @@
-DROP
-DATABASE IF EXISTS StudentTableTest;
-CREATE
-DATABASE StudentTableTest;
+DROP db IF EXISTS StudentTableTest;
+CREATE DATABASE StudentTableTest;
 USE
 StudentTableTest;
 
