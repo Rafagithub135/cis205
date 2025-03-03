@@ -1,7 +1,7 @@
-DROP db IF EXISTS StudentTableTest;
-CREATE DATABASE StudentTableTest;
-USE
-StudentTableTest;
+-- DROP db IF EXISTS StudentTableTest;
+-- CREATE DATABASE StudentTableTest;
+-- USE
+-- StudentTableTest;
 
 CREATE TABLE Student
 (
@@ -15,7 +15,7 @@ CREATE TABLE Student
     phone       CHAR(10),
     major       VARCHAR(20),
     gpa DOUBLE,
-    gender      ENUM ('F','M'),
+    gender      CHAR(1),
     scholarship BOOLEAN,
     CONSTRAINT STUDENT_PK PRIMARY KEY (snum)
 );
