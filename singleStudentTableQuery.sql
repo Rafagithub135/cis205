@@ -1,7 +1,4 @@
--- DROP db IF EXISTS StudentTableTest;
--- CREATE DATABASE StudentTableTest;
--- USE
--- StudentTableTest;
+USE sailorBoatReservation;
 
 CREATE TABLE Student
 (
@@ -14,7 +11,7 @@ CREATE TABLE Student
     zip         CHAR(5),
     phone       CHAR(10),
     major       VARCHAR(20),
-    gpa DOUBLE,
+    gpa         DOUBLE,
     gender      CHAR(1),
     scholarship BOOLEAN,
     CONSTRAINT STUDENT_PK PRIMARY KEY (snum)
