@@ -1,0 +1,73 @@
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS donor;
+DROP TABLE IF EXISTS pet;
+DROP TABLE IF EXISTS vehicle;
+DROP TABLE IF EXISTS rescuer;
+DROP TABLE IF EXISTS location;
+DROP TABLE IF EXISTS pickup;
+DROP TABLE IF EXISTS delivers;
+
+CREATE TABLE employees
+(
+    empName VARCHAR(255) NOT NULL ,
+    address VARCHAR(255) NOT NULL ,
+    phone   CHAR(10),
+    email   VARCHAR(255),
+    empNum  VARCHAR(10) NOT NULL ,
+
+    CONSTRAINT empNum_PK PRIMARY KEY (empNum)
+);
+
+CREATE TABLE donor
+(
+    donName VARCHAR(255) NOT NULL ,
+    donAddress VARCHAR(255) NOT NULL,
+    donPhone CHAR(10),
+    donEmail VARCHAR(255),
+    donID VARCHAR(10) NOT NULL PRIMARY KEY,
+
+    CONSTRAINT donID_PK PRIMARY KEY (donID)
+);
+
+CREATE TABLE pet
+(
+    petName VARCHAR(255) NOT NULL ,
+    petSpecies VARCHAR(30) NOT NULL,
+    petDob DATE,
+    petBreed VARCHAR(30) NOT NULL,
+    petID VARCHAR(10) NOT NULL PRIMARY KEY,
+    donID_FK VARCHAR(10) NOT NULL,
+
+    CONSTRAINT petID_PK PRIMARY KEY (petID),
+    CONSTRAINT donID_FK FOREIGN KEY (donID_FK)
+);
+
+CREATE TABLE location
+(
+    locName VARCHAR(15) NOT NULL,
+    locNum VARCHAR(10) NOT NULL,
+    locPhone CHAR(10) NOT NULL,
+    locContact VARCHAR(255) NOT NULL,
+    locID VARCHAR(15) NOT NULL PRIMARY KEY,
+    locEmail VARCHAR(255) NOT NULL,
+
+    CONSTRAINT locID_PK PRIMARY KEY (locID)
+);
+
+CREATE TABLE rescuer
+(
+    resName VARCHAR(255) NOT NULL,
+    resAddress VARCHAR(255) NOT NULL,
+    resPhone CHAR(10),
+    resEmail VARCHAR(255) NOT NULL,
+    resID VARCHAR(15) NOT NULL PRIMARY KEY,
+
+    CONSTRAINT resID_PK PRIMARY KEY (resID)
+);
+
+CREATE TABLE pickup
+(
+    puDate DATE NOT NULL,
+    puTime TIME NOT NULL,
+    vin_FK VARCHAR(10) NOT NULL
+);
