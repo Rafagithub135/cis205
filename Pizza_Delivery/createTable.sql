@@ -88,4 +88,3 @@ CREATE TABLE toppings
     CONSTRAINT toppings_FK2 FOREIGN KEY (itemNum_FK)
     REFERENCES item(itemNum)
 );
-

@@ -1,4 +1,5 @@
-USE sailorBoatReservation;
+
+--        USE sailorBoatReservation;
 
 CREATE TABLE Student
 (
