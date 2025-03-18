@@ -1,3 +1,5 @@
+USE pizzaDelivery;
+
 INSERT INTO employees (empNum, empName)
     VALUES
         ('T100', 'Greg House'),
