@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS pizzaDelivery;
 CREATE DATABASE pizzaDelivery;
+USE pizzaDelivery;
 
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS customer;
@@ -38,9 +39,9 @@ CREATE TABLE deliveryPerson
 
 CREATE TABLE orders
 (
-    orderNum        VARCHAR(25),
-    orderDate       DATE,
-    orderTime       TIME,
+    orderNum       VARCHAR(25),
+    orderDate      DATE,
+    orderTime      TIME,
     empNum_FK      VARCHAR(10),
     delPhone_FK    CHAR(10),
     custPhone_FK   CHAR(10),
@@ -64,15 +65,16 @@ CREATE TABLE pizza
 
 CREATE TABLE item
 (
-    itemNum         INTEGER auto_increment,
-    orderNum_FK     VARCHAR(25),
-    pSize_FK         VARCHAR(10)
+    itemNum     INTEGER auto_increment,
+    orderNum_FK VARCHAR(25),
+    pSize_FK    VARCHAR(10),
 
-    CONSTRAINT item_PK  PRIMARY KEY (itemNum),
+    CONSTRAINT itemNum_PK PRIMARY KEY (itemNum),
     CONSTRAINT item_FK1 FOREIGN KEY (orderNum_FK)
-    REFERENCES orders(orderNum),
+        REFERENCES orders (orderNum),
     CONSTRAINT pSize_FK2 FOREIGN KEY (pSize_FK)
-    REFERENCES pizza);
+        REFERENCES pizza (pSize)
+);
 
 CREATE TABLE topping
 (
