@@ -61,15 +61,15 @@ CREATE TABLE pizza
 
 CREATE TABLE item
 (
-    itemNum     INTEGER auto_increment,
-    orderNum_FK VARCHAR(25),
-    pSize_FK    VARCHAR(10),
+    itemNum         INTEGER auto_increment,
+    orderNum_FK     VARCHAR(25),
+    pSize_FK         VARCHAR(10),
 
-    CONSTRAINT itemNum_PK PRIMARY KEY (itemNum),
+    CONSTRAINT itemNum_PK  PRIMARY KEY (itemNum),
     CONSTRAINT orderNum_FK1 FOREIGN KEY (orderNum_FK)
-        REFERENCES orders (orderNum),
+    REFERENCES orders(orderNum),
     CONSTRAINT pSize_FK2 FOREIGN KEY (pSize_FK)
-        REFERENCES pizza (pSize)
+    REFERENCES pizza(pSize)
 );
 
 CREATE TABLE topping
