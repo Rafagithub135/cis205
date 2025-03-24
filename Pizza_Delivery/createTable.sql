@@ -1,6 +1,3 @@
-DROP DATABASE IF EXISTS pizzaDelivery;
-CREATE DATABASE pizzaDelivery;
-
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS deliveryPerson;
@@ -38,9 +35,9 @@ CREATE TABLE deliveryPerson
 
 CREATE TABLE orders
 (
-    orderNum        VARCHAR(25),
-    orderDate       DATE,
-    orderTime       TIME,
+    orderNum       VARCHAR(25),
+    orderDate      DATE,
+    orderTime      TIME,
     empNum_FK      VARCHAR(10),
     delPhone_FK    CHAR(10),
     custPhone_FK   CHAR(10),
