@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS pizzaDelivery;
+CREATE DATABASE pizzaDelivery;
+USE pizzaDelivery;
+
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS deliveryPerson;
@@ -44,11 +48,11 @@ CREATE TABLE orders
 
     CONSTRAINT orderNum_PK PRIMARY KEY (orderNum),
     CONSTRAINT empNum_FK1 FOREIGN KEY (empNum_FK)
-    REFERENCES employees(empNum),
+        REFERENCES employees(empNum),
     CONSTRAINT delPhone_FK2 FOREIGN KEY (delPhone_FK)
-    REFERENCES deliveryPerson(delPhone),
+        REFERENCES deliveryPerson(delPhone),
     CONSTRAINT custPhone_FK3 FOREIGN KEY (custPhone_FK)
-    REFERENCES customer(custPhone)
+        REFERENCES customer(custPhone)
 );
 
 CREATE TABLE pizza
@@ -74,10 +78,10 @@ CREATE TABLE item
 
 CREATE TABLE topping
 (
-  tName     VARCHAR(30),
-  tPrice    DOUBLE,
+    tName     VARCHAR(30),
+    tPrice    DOUBLE,
 
-  CONSTRAINT topping PRIMARY KEY (tName)
+    CONSTRAINT topping PRIMARY KEY (tName)
 );
 
 CREATE TABLE toppings
@@ -87,7 +91,44 @@ CREATE TABLE toppings
 
     CONSTRAINT toppings_FK PRIMARY KEY (tName_FK, itemNum_FK),
     CONSTRAINT toppings_FK1 FOREIGN KEY (tName_FK)
-    REFERENCES topping(tName),
+        REFERENCES topping(tName),
     CONSTRAINT toppings_FK2 FOREIGN KEY (itemNum_FK)
-    REFERENCES item(itemNum)
+        REFERENCES item(itemNum)
 );
+
+INSERT INTO employees (empNum, empName)
+VALUES
+    ('T100', 'Greg House'),
+    ('T101', 'George Grey'),
+    ('T102', 'B. J. Honeycutt'),
+    ('T103', 'Sherman Potter'),
+    ('T104', 'Frank Burns');
+
+INSERT INTO customer (custFName, custLName, custPhone)
+VALUES
+    ('David', 'Wendt', 7137552311),
+    ('Sam', 'Smucker', 7178991234);
+
+INSERT INTO deliveryPerson (delPhone, delModel, delName)
+VALUES
+    (2158348599, 'Escort', 'Fred Sanford'),
+    (2157354677, 'Ranger','Roger Rabbit'),
+    (123456789, 'Escalade','George Winston');
+
+-- On the many side, values must have values for foreign keys in one table.  If orderNum is set for auto increment, leave data blank when entering.
+INSERT INTO orders (orderNum, orderDate, orderTime, empNum_FK, delPhone_FK, custPhone_FK)
+VALUES
+    ('01', 20250115, 1600, 'T100', 2158348599, 7137552311),
+    ('02', 20250117, 1035, 'T101', 2158348599, 7178991234);
+
+INSERT INTO pizza (pSize, pPrice)
+VALUES
+    ('Small', 4.99),
+    ('Medium', 8.99),
+    ('Large', 12.99),
+    ('X-Large', 15.99);
+
+INSERT INTO item (orderNum_FK, pSize_FK)
+VALUES
+    ('01', 'Small'),
+    ('02', 'X-Large');
