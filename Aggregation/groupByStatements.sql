@@ -51,6 +51,7 @@ WHERE
 GROUP BY
     YEAR(orderDate);
 
+# * - This statement get all of the items in the orders table, selects the year by orderDate and displays it under a heading of "year", adds the total sales by multiplying the quantity ordered  by the price and then adding all of the products under the heading "total", only displays the amounts if the status is "Shipped", groups all of the totals by the year, but only if the year is after 2003.
 
 SELECT
     YEAR(orderDate) AS year,
@@ -65,6 +66,7 @@ GROUP BY
 HAVING
     year > 2003;
 
+# * - This statement gets all of the items in the orders table, selects the year from the order date and displays it under a heading of "year", each item's status and gets the total sales as described above under a heading of "total".  It displays the items grouped by year and then by status and puts the items in the order of year from earliest year to the latest year.
 
 SELECT
     YEAR(orderDate) AS year,
@@ -79,6 +81,7 @@ GROUP BY
 ORDER BY
     year;
 
+# This statement gets all of the items from the orders table.  It then displays the items in a column with a heading of "year" and another column with the count of the orders.  Then it groups the items by year.
 
 SELECT
     YEAR(orderDate) AS year,
@@ -88,6 +91,7 @@ FROM
 GROUP BY
     year;
 
+# This statement gets the items from the customers table, then selects the states that each customer is in and displays the states of all of the customers.
 
 SELECT
     state
