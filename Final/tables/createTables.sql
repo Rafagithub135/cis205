@@ -7,5 +7,6 @@ DROP TABLE IF EXISTS customers;
 
 CREATE TABLE locations
 (
-    locID
+    locID       VARCHAR(10) PRIMARY KEY NOT NULL,
+    locAddress  VARCHAR(255) NOT NULL
 );

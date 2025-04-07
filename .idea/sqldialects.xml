@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Aggregation/enterMetaData.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Animal_Pet_Rescue/createTable.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Animal_Pet_Rescue/enterMetaData.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Pizza_Delivery/createTable.sql" dialect="MariaDB" />
@@ -8,6 +9,6 @@
     <file url="file://$PROJECT_DIR$/Sailor_Boat_Reservation" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/Sailor_Boat_Reservation/createDatabase.sql" dialect="SQLite" />
     <file url="file://$PROJECT_DIR$/Sailor_Boat_Reservation/createTables.sql" dialect="SQLite" />
-    <file url="PROJECT" dialect="MariaDB" />
+    <file url="PROJECT" dialect="SQLite" />
   </component>
 </project>
