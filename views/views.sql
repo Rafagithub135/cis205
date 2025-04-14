@@ -1,3 +1,8 @@
+-- Ralph McCloskey
+-- Views Project
+-- Created:  4/7/2025
+-- Fall 2025
+
 -- CREATES A VIEW
 CREATE VIEW customerPayments
 AS
